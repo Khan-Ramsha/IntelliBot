@@ -24,16 +24,24 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
 
 3. Install the dependencies:
 
- ``` pip install -r requirements.txt ```
+ ```bash 
+ pip install -r requirements.txt
+```
 
 3. Create a .env file and add your API keys (for models like Cohere, Hugging Face, etc.):
 
-  ``` COHERE_API_KEY=your_cohere_api_key ``` 
-  ```HUGGINGFACE_API_KEY=your_huggingface_api_key ```
+  ``` bash 
+  COHERE_API_KEY=your_cohere_api_key
+```` 
+  ```bash 
+  HUGGINGFACE_API_KEY=your_huggingface_api_key
+   ```
   
 4. Run the app:
 
-  ``` python app.py ```
+  ```bash
+     python app.py
+   ```
   
 The app will be available at ``` http://127.0.0.1:8000 ```
 
