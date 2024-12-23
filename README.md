@@ -15,29 +15,23 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
 
 1. Clone the repository:
 
-    ```
-      https://github.com/Khan-Ramsha/IntelliBot.git
-      cd intellibot
-    ```
+    ``` https://github.com/Khan-Ramsha/IntelliBot.git ```
+     ``` cd intellibot ```
 
-2. Install the dependencies:
+3. Install the dependencies:
 
-  ```
-  pip install -r requirements.txt
-  ```
+ ``` pip install -r requirements.txt ```
 
 3. Create a .env file and add your API keys (for models like Cohere, Hugging Face, etc.):
 
-  ```
-  COHERE_API_KEY=your_cohere_api_key
-  HUGGINGFACE_API_KEY=your_huggingface_api_key
-  ```
+  ``` COHERE_API_KEY=your_cohere_api_key ``` 
+  ```HUGGINGFACE_API_KEY=your_huggingface_api_key ```
+  
 4. Run the app:
 
-  ```
-  python app.py
-  ```
-The app will be available at http://127.0.0.1:8000.
+  ``` python app.py ```
+  
+The app will be available at ``` http://127.0.0.1:8000 ```
 
 ##### Engage in conversation, ask questions from PDF, or summarize your document.
 
