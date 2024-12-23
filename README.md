@@ -15,8 +15,8 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
 
 1. Clone the repository:
 
-    ``` https://github.com/Khan-Ramsha/IntelliBot.git ```
-     ``` cd intellibot ```
+    `` https://github.com/Khan-Ramsha/IntelliBot.git ``
+     `` cd intellibot ``
 
 3. Install the dependencies:
 
