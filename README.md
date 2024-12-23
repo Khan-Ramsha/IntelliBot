@@ -15,12 +15,12 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
 
 1. Clone the repository:
 
-    ``
+   ``` bash
    https://github.com/Khan-Ramsha/IntelliBot.git
-    ``
-     ``
+   ```
+   ``` bash
        cd intellibot
-   ``
+   ```
 
 3. Install the dependencies:
 
