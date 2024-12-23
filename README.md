@@ -43,7 +43,8 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
      python app.py
    ```
   
-The app will be available at ```bash 
+The app will be available at ```bash
+
                                  http://127.0.0.1:8000 
                                  ```
 
