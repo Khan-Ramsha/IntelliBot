@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot App</title>
+    <style>
+            /* General Styles */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+    body {
+        margin: 0;
+        padding: 0;
+        background: #121212;
+        color: #fff;
+        overflow-x: hidden;
+    }
+
+    h1, h2, p {
+        margin: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    /* Header */
+    header {
+        background: #1f1f1f;
+        padding: 16px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+        font-size: 1.8em;
+        font-weight: 600;
+    }
+
+    header nav a {
+        margin: 0 10px;
+
+        color: #bbb;
+        transition: color 0.3s;
+    }
+
+    header nav a:hover {
+        color: #fff;
+    }
+
+    /* Home Page Styles */
+    .landing-page {
+        text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(135deg, #1A237E, #00B8D4);
+        color: #fff;
+    }
+
+    .landing-page h1 {
+        font-size: 3.5em;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .landing-page p {
+        font-size: 1.3em;
+        margin-bottom: 14%;
+        font-weight: 400;
+        line-height: 1.6;
+    }
+
+    .options {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .option {
+        padding: 20px 40px;
+        font-size: 1.5em;
+        font-weight: bold;
+        border-radius: 50px;
+        text-align: center;
+        color: #fff;
+        background: linear-gradient(90deg, #618dd4, #e52e71);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .option:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Chatbot App</h1>
+        <nav>
+            <a href="">Home</a>
+            <a href="/templates/chat.html">Chat</a>
+            <a href="/templates/document.html">Ask your Document</a>
+        </nav>
+    </header>
+
+    <!-- Home Page -->
+    <div class="landing-page">
+        <h1>Welcome to Your Personal AI Assistant</h1>
+        <p>Discover a new way to chat and work smarter. What would you like to do today?</p>
+        <div class="options">
+            <a href="/chat" class="option">From formal to fun: AI that speaks your style!</a>
+            <a href="/doc_processing" class="option">Ask your Document</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+  /* General Styles */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+  body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #121212;
+      color: #fff;
+      overflow-x: hidden;
+  }
+
+  h1, h2, p {
+      margin: 0;
+  }
+
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
+
+  button {
+      cursor: pointer;
+  }
+
+  .container {
+      padding: 20px;
+  }
+
+  /* Header */
+  header {
+      background: #1f1f1f;
+      padding: 16px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  header h1 {
+      font-size: 1.8em;
+      font-weight: 600;
+  }
+
+  header nav a {
+      margin: 0 10px;
+      font-size: 1em;
+      font-weight: 400;
+      color: #bbb;
+      transition: color 0.3s;
+  }
+
+  header nav a:hover {
+      color: #fff;
+  }
+
+  /* Home Page Styles */
+  .landing-page {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #1A237E, #00B8D4);
+      color: #fff;
+  }
+
+  .landing-page h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      font-weight: 700;
+  }
+
+  .landing-page p {
+      font-size: 1.3em;
+      margin-bottom: 14%;
+      font-weight: 400;
+      line-height: 1.6;
+  }
+
+  .options {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+  }
+
+  .option {
+      padding: 20px 40px;
+      font-size: 1.5em;
+      font-weight: bold;
+      border-radius: 50px;
+      text-align: center;
+      color: #fff;
+      background: linear-gradient(90deg, #618dd4, #e52e71);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .option:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  }
+ 

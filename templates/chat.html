@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with AI</title>
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(135deg, #1A237E, #00B8D4);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 1200px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-section{
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .history-section {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+
+        }
+        .chat-section {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .history-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .chat-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+            text-align: center; 
+            gap: 15px; 
+        }
+
+        .tone-selection {
+            color: white;
+            background-color: black;
+            border: 2px solid #00FFAB;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 30%; 
+            text-align: center;
+        }
+
+
+        .response-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            height: 200px;
+            width: 90%;
+            overflow-y: auto;
+            font-size: 18px;
+            color: #fff;
+        }
+
+        .input-box {
+            background: transparent;
+            border: 2px solid #00FFAB;
+            color: white;
+            border-radius: 20px;
+            padding: 12px 20px;
+            width: 55%;
+            font-size: 16px;
+            margin-top: 10px;
+            /* margin-bottom: 20px; */
+            resize: none;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #00B8D4, #1976D2);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-4px);
+        }
+
+        .history-list {
+            max-height: 60%;
+            overflow-y:scroll;
+        }
+
+        .history-item {
+            border-radius: 12px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            color: #ccc;
+            cursor: pointer;
+            height: 300px;
+            
+        }
+
+        .history-item:hover {
+            color: white;
+        }
+        ::placeholder{
+            color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+         
+        <div class="chat-section">
+            <h3>Set the tone, and let AI do the talking!</h3>
+            <select class="tone-selection" id = "tone-selection">
+                <option value="formal">Formal</option>
+                <option value="humorous">Humorous</option>
+                <option value="casual">Casual</option>
+            </select>
+
+            <div class="response-box" id = "response-container">
+                <p>AI-generated response will appear here...</p>
+            </div>
+            <textarea class="input-box" id = "input-box" placeholder="Type your input here..."></textarea>
+            <div><button class="submit-button" id = "submit-button">Send</button></div>
+        </div>
+        <div>
+            <p>
+                
+            </p>
+        </div>
+        
+        <div class="history-section">
+            <h2>Chat History</h2>
+            <div class="history-list">
+                <div class="history-item" id = "history">Your Chat History will apear here..</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let userId = localStorage.getItem("user_id");//getting userID
+        if (!userId) {//if doesnt exist create one
+            userId = "user_" + Math.floor(Math.random() * 1000000); 
+            localStorage.setItem("user_id", userId); 
+        }
+    
+        const sendBtn = document.getElementById("submit-button");
+        const responseContainer = document.getElementById("response-container");
+        const historyContainer = document.getElementById("history");
+        const inputBox = document.getElementById("input-box");
+    
+        sendBtn.addEventListener("click", async () => {
+            const tone = document.getElementById("tone-selection").value;
+            const userInput = inputBox.value.trim();
+    
+            if (!userInput) {
+                alert("Please enter a message.");
+                return;
+            }
+    
+            responseContainer.innerHTML = "<p>Generating Response, Please wait...</p>";
+    
+            try {
+                const response = await fetch("/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ tone, question: userInput, user_id: userId }), // Send user_id
+                });
+    
+                if (response.ok) {
+                    const data = await response.json();
+                    responseContainer.innerHTML = `<p>${data.response}</p>`;
+    
+                    historyContainer.innerHTML = ''; 
+    
+                    data.history.forEach(item => {
+                        historyContainer.innerHTML += `<p><strong>Your Input: </strong> ${item.question}</p>`;
+                        historyContainer.innerHTML += `<p><strong>AI Assistant: </strong> ${item.answer}</p>`;
+
+                    });
+    
+                    historyContainer.scrollTop = historyContainer.scrollHeight;
+                    inputBox.value = ""; 
+                } else {
+                    alert("Failed to get a response. Please try again.");
+                }
+            } catch (error) {
+                console.error("Error sending message:", error);
+                alert("Failed to connect to the server. Please try again later.");
+            }
+        });
+    </script>
+    
+</body>
+</html>

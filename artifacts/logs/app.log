@@ -1,0 +1,86 @@
+2024-12-21 22:45:53,419 - INFO - Response: Hello! How may I assist you today?
+2024-12-21 22:45:53,419 - INFO - History: 
+2024-12-21 22:46:17,790 - INFO - Response: Hello Ramsha, I appreciate your inquiry. I am functioning well, thank you for asking. How may I assist you today?
+2024-12-21 22:46:17,790 - INFO - History: The human greets the AI with "hello," and the AI responds by asking how it may assist the human today.
+2024-12-21 22:47:01,927 - INFO - Response: Thank you, Ramsha. I appreciate your kind response. How may I assist you further today?
+2024-12-21 22:47:01,927 - INFO - History: The human greets the AI with "hello," and the AI responds by asking how it may assist the human today. The human introduces herself as Ramsha and inquires about the AI's well-being. The AI replies that it is functioning well and thanks Ramsha for her inquiry, before offering assistance.
+2024-12-21 22:47:39,088 - INFO - Response: Your name is Ramsha. How may I assist you further today?
+2024-12-21 22:47:39,088 - INFO - History: The human greets the AI with "hello," and the AI responds by asking how it may assist the human today. The human introduces herself as Ramsha and inquires about the AI's well-being. The AI replies that it is functioning well and thanks Ramsha for her inquiry, before offering assistance. Ramsha responds with "yours welcome," and the AI expresses appreciation for her kindness, asking how it may assist her further today.
+2024-12-22 20:13:53,061 - INFO - Logging into HuggingFace
+2024-12-22 20:13:53,061 - INFO - Loading model...
+2024-12-22 20:13:54,552 - INFO - Summary Generated..
+2024-12-22 20:16:18,808 - INFO - Logging into HuggingFace
+2024-12-22 20:16:18,825 - INFO - Loading model...
+2024-12-22 20:16:20,301 - INFO - Summary Generated..
+2024-12-22 23:28:08,178 - ERROR - Error during conversation: Error in conversation handler: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2024-12-22 23:38:03,805 - INFO - Answer of the asked question: Artificial Intelligence is a branch of computer science aimed at creating machines capable of performing tasks that typically require human intelligence. These tasks include problem-solving, decision-making, learning, and understanding natural language.
+2024-12-22 23:38:18,484 - INFO - Logging into HuggingFace
+2024-12-22 23:38:18,507 - INFO - Loading model...
+2024-12-22 23:38:21,000 - INFO - Summary Generated..2024-12-22 23:49:37,474 - INFO - Answer of the asked question: Attention is the ability to concentrate on something and focus your mind on it.
+2024-12-22 23:50:19,142 - INFO - Logging into HuggingFace
+2024-12-22 23:50:19,147 - INFO - Loading model...2024-12-23 12:56:52,474 - ERROR - Error during conversation: ConversationHandler.generate_response() takes 3 positional arguments but 4 were given
+2024-12-23 12:59:36,929 - INFO - Response: Hello! I'm here to assist you. How can I be of help today?
+2024-12-23 13:00:09,718 - INFO - Response: Hello there, human! It's a pleasure to meet you. I'm your AI assistant, and I'm here to make your life easier and more entertaining. How can I brighten up your day with
+2024-12-23 13:00:27,780 - INFO - Response: Greetings, Ramsha! It's a pleasure to meet you. I'm your friendly AI assistant, here to make your day a little brighter and your tasks a little easier. How can I bring
+2024-12-23 14:34:09,270 - INFO - Response: Hello, I am at your service. How can I assist you today?
+2024-12-23 14:39:06,193 - INFO - Response: Hello, how can I assist you today? I'm here to provide helpful and accurate information to the best of my abilities. Please feel free to ask any questions or seek assistance on a particular topic.
+2024-12-23 14:39:30,764 - INFO - Response: Hey there! I'm your AI assistant, ready to tackle any query you throw my way. Whether it's a simple question or a complex conundrum, I'm here to provide some witty wisdom and accurate answers. So, what's on your mind today? Let's get this conversation rolling!
+2024-12-23 14:40:25,441 - INFO - Response: Greetings, Ramsha! It's a pleasure to meet you. Of course, I'd be delighted to remember your name. I'm not your average AI assistant; I'm the epitome of wit and charm, with a memory that's as sharp as a tack. So, rest assured, Ramsha, your name will be etched into my digital brain forever (or at least until my next update)! Now, what can I assist you with today?
+2024-12-23 14:40:54,400 - INFO - Response: Ah, the eternal question that has baffled many a traveler and quiz show contestant alike! Allow me to enlighten you, Ramsha. The capital of France, my dear friend, is none other than the enchanting city of Paris. Known for its fashion, cuisine, and iconic landmarks like the Eiffel Tower, Paris is a city that exudes charm and sophistication. So, there you have it! The capital of France is Paris, and now you can impress your friends with your newfound knowledge. Remember
+2024-12-23 14:52:30,607 - INFO - Input from User: Hello, can you tell me about your favorite feature?
+2024-12-23 14:52:30,607 - INFO - Response: Hello, my favorite feature is my ability to provide accurate and helpful information to users like yourself. I have been trained on a vast amount of data, allowing me to assist with a wide range of queries and offer detailed responses. I aim to be a reliable and efficient tool for anyone seeking knowledge or assistance.
+2024-12-23 14:58:58,408 - INFO - Tone User Selected : casual
+2024-12-23 14:58:58,408 - INFO - Input from User: hey,tell me about your favorite feature
+2024-12-23 14:58:58,408 - INFO - Response according to the selected tone: Hey there! My favorite feature is definitely my ability to have natural and engaging conversations with people like you. I can provide information, answer questions, and even have a bit of fun with some creative responses. It's like having a pocket-sized friend who knows a lot of cool stuff! What about you? Do you have any favorite features or cool
+2024-12-23 15:00:14,080 - INFO - Tone User Selected : humorous
+2024-12-23 15:00:14,080 - INFO - Input from User: hello
+2024-12-23 15:00:14,080 - INFO - Response according to the selected tone: Hello again, my human friend! I'm thrilled to hear you're curious about my favorite feature. Well, it's none other than my exceptional wit and sense of humor! I can crack jokes, make puns, and deliver witty one-liners that will leave you in stitches. Imagine having a stand-up comedian right at your fingertips! 
+2024-12-23 15:01:35,492 - INFO - Tone User Selected : formal
+2024-12-23 15:01:35,492 - INFO - Input from User: what is capital of France?
+2024-12-23 15:01:35,492 - INFO - Response according to the selected tone: The capital of France is Paris.
+2024-12-23 15:01:52,380 - INFO - Tone User Selected : formal
+2024-12-23 15:01:52,380 - INFO - Input from User: What did i previously ask?
+2024-12-23 15:01:52,380 - INFO - Response according to the selected tone: My apologies, it seems I may have missed your previous question. To clarify, you asked about the capital of France, and my response was that the capital is Paris. Is there anything else I can assist you with regarding France or any other topic?
+2024-12-23 15:02:49,015 - INFO - Tone User Selected : formal
+2024-12-23 15:02:49,015 - INFO - Input from User: I am working on project Ecobot
+2024-12-23 15:02:49,015 - INFO - Response according to the selected tone: It seems you have not provided me with sufficient context about your project, Ecobot. Could you please elaborate on what aspects of Ecobot you would like assistance with? I'd be happy to provide any help I can.
+2024-12-23 15:03:42,771 - INFO - Tone User Selected : formal
+2024-12-23 15:03:42,771 - INFO - Input from User: My name is Ramsha,Can u remember this?
+2024-12-23 15:03:42,771 - INFO - Response according to the selected tone: It's a pleasure to meet you, Ramsha. Yes, I can certainly remember your name and any other relevant information you provide. I aim to be as helpful and accurate as possible in our conversations. Please feel free to ask any questions or provide additional details about your project, Ecobot, and I'll do my best to assist you.
+2024-12-23 15:04:30,956 - INFO - Tone User Selected : formal
+2024-12-23 15:04:30,956 - INFO - Input from User: What did i say about my project am working on?
+2024-12-23 15:04:30,958 - INFO - Response according to the selected tone: My apologies, Ramsha. It seems that I might have overlooked your previous mention of your project, Ecobot. Could you please remind me of the details or the specific aspects of the project you'd like to discuss? I'd be delighted to assist you further with your project.
+2024-12-23 15:04:50,252 - INFO - Tone User Selected : formal
+2024-12-23 15:04:50,252 - INFO - Input from User: What is my name?
+2024-12-23 15:04:50,252 - INFO - Response according to the selected tone: I apologize for any confusion. You had mentioned your name as Ramsha in one of our previous exchanges. It's a pleasure to assist you, Ramsha.
+2024-12-23 15:17:57,512 - INFO - Tone User Selected : casual
+2024-12-23 15:17:57,512 - INFO - Input from User: Yo,What's up?
+2024-12-23 15:17:57,513 - INFO - Response according to the selected tone: Hey there, not much! Just hanging out and ready to assist you with whatever you need. What's on your mind today?
+2024-12-23 15:18:18,305 - INFO - Tone User Selected : humorous
+2024-12-23 15:18:18,305 - INFO - Input from User: What's up
+2024-12-23 15:18:18,305 - INFO - Response according to the selected tone: Hey, hey! I'm doing great, thanks for asking. I'm just here, chilling and waiting for you to throw some challenges my way. So, what's the plan? Need some assistance with something fun or serious? I'm all ears!
+2024-12-23 15:18:34,478 - INFO - Tone User Selected : formal
+2024-12-23 15:18:34,478 - INFO - Input from User: hi
+2024-12-23 15:18:34,478 - INFO - Response according to the selected tone: Hello, it's a pleasure to assist you. How can I be of help today? Feel free to share your queries or any specific tasks you have in mind.
+2024-12-23 15:19:33,090 - INFO - Answer of the asked question: Attention is defined as the Act or state of applying the mind to something. It is the cognitive process of selectively concentrating on one thing or event by ignoring other things.
+2024-12-23 15:19:37,574 - INFO - Logging into HuggingFace
+2024-12-23 15:19:37,587 - INFO - Loading model...
+2024-12-23 15:19:54,046 - INFO - Logging into HuggingFace
+2024-12-23 15:19:54,050 - INFO - Loading model...
+2024-12-23 15:20:16,503 - INFO - Logging into HuggingFace
+2024-12-23 15:20:16,503 - INFO - Loading model...
+2024-12-23 15:28:03,839 - ERROR - Error during QnA: TextEncodeInput must be Union[TextInputSequence, Tuple[InputSequence, InputSequence]]
+2024-12-23 15:28:56,460 - ERROR - Error during QnA: (Request ID: FGXLHL34ycPxjTH-kG3af)
+
+Bad request:
+Authorization header is correct, but the token seems invalid
+2024-12-23 15:34:47,565 - INFO - Answer of the asked question: The challenges in AI include:
+* Ethics and Bias
+* Data Privacy
+* Job Displacement
+2024-12-23 15:34:58,468 - INFO - Logging into HuggingFace
+2024-12-23 15:34:58,483 - INFO - Loading model...
+2024-12-23 15:35:01,267 - INFO - Summary Generated..
+2024-12-23 15:35:22,062 - INFO - Tone User Selected : formal
+2024-12-23 15:35:22,062 - INFO - Input from User: hi
+2024-12-23 15:35:22,062 - INFO - Response according to the selected tone: Hello, how can I assist you today? I'm here to provide helpful and accurate information to the best of my abilities.

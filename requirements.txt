@@ -1,0 +1,13 @@
+fastapi
+sentence_transformers 
+langchain_community
+langchain_openai
+langchain 
+langchain_huggingface
+huggingface-hub
+faiss-cpu
+torch
+pypdf
+python-multipart
+python-dotenv
+cohere

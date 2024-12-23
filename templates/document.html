@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Upload - Summarize or QnA</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #1A237E, #00B8D4);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .input-box {
+            background: transparent;
+            border: 2px solid #00FFAB;
+            
+            color: rgb(0, 0, 0);
+            border-radius: 20px;
+            padding: 12px 70px;
+            width: 70%;
+            font-size: 15px;
+            /* height: 5%;
+            margin-top: 10px; */
+            resize: none;
+        }
+        .hero-section {
+            background: rgba(0, 0, 0, 0.7);
+            width: 100%;
+            padding: 80px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-section h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .upload-btn {
+            background: linear-gradient(135deg, #00FFAB, #00B8D4);
+            color: rgb(6, 4, 4);
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .upload-btn:hover {
+            transform: translateY(-5px);
+            background: #008C9E;
+        }
+
+        .file-upload-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .file-upload {
+            background: transparent;
+            color: rgb(0, 0, 0);
+            border: 2px solid #00FFAB;
+            border-radius: 30px;
+            padding: 9px 10px;
+            font-size: 16px;
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            background: linear-gradient(135deg, #6A1B9A, #00B8D4, #064788);
+            color: #020045;
+            border: 2px solid #3f0ab9;
+
+            padding: 15px 40px;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        ::placeholder{
+            color: black;
+        }
+
+        .action-button:hover {
+            transform: translateY(-5px);
+            background:  #678bc1;
+        }
+
+        .response-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            width: 70%;
+            margin-top: 40px;
+            font-size: 18px;
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: white;
+            text-align: center;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>Upload Document for Summarization or QnA</h1>
+        <p>Upload, Interact, and Unlock Insights: Summarize or Ask Questions from Your PDF!</p>
+    </div>
+
+    <!-- File Upload Section -->
+    <div class="file-upload-section">
+        <input type="file" id="file-upload" class="file-upload" accept=".pdf">
+        <textarea class="input-box" id = "input-box" placeholder="Ask any question from uploaded PDF.."></textarea>
+
+    </div>
+
+    <!-- Action Buttons for Summarize or QnA -->
+    <div class="action-buttons">
+        <button class="action-button" id="summarize-btn">Summarize</button>
+        <button class="action-button" id="qna-btn">Ask a Question</button>
+    </div>
+
+    <!-- Response Section -->
+    <div class="response-section" id="response-section">
+        <p>Please upload a PDF file to start.</p>
+    </div>
+  
+
+    <script>
+    const summarizeBtn = document.getElementById("summarize-btn");
+    const qnaBtn = document.getElementById("qna-btn");
+    const responseSection = document.getElementById("response-section");
+    const fileInput = document.getElementById("file-upload");
+    const inputBox = document.getElementById("input-box");
+    fileInput.addEventListener("change", () => {
+        if (fileInput.files.length > 0) {
+            const fileName = fileInput.files[0].name;
+            responseSection.innerHTML = `<p>Uploaded: ${fileName}</p>`;
+        } else {
+            responseSection.innerHTML = "<p>No file selected.</p>";
+        }
+    });
+
+    async function processRequest(action) {
+        const file = fileInput.files[0];
+        const query = inputBox.value.trim();
+
+        if (!file) {
+            responseSection.innerHTML = "<p>Please upload a file.</p>";
+            return;
+        }
+        
+        if(file && action == "summarize"){
+            responseSection.innerHTML = "<p>Generating the Summary, Please wait..."
+        }
+
+        if (action === "qna" && !query) {
+            responseSection.innerHTML = "<p>Please enter a question.</p>";
+            return;
+        }
+        if (action === "qna" && file) {
+            responseSection.innerHTML = "<p>Answering your question, Please wait..</p>";
+        }
+     
+        try {
+            const formData = new FormData();
+            formData.append("file", file);
+
+            // Step 1: Upload the document
+            const uploadResponse = await fetch("/upload_document", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (!uploadResponse.ok) {
+                throw new Error("Failed to upload file.");
+            }
+
+            const uploadData = await uploadResponse.json();
+            const filePath = uploadData.file_path;
+
+            const endpoint = action === "summarize" ? "/summarize" : "/QnA";
+            const payload = action === "summarize" 
+                ? { file_path: filePath } 
+                : { file_path: filePath, query };
+
+            const response = await fetch(endpoint, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload),
+            });
+
+            const data = await response.json();
+            if (response.ok && endpoint == "/summarize") {
+                responseSection.innerHTML = `<p>Summary: ${data.summary}</p>`;
+            } else {
+                responseSection.innerHTML = `<p>Error: ${data.detail}</p>`;
+            }
+            if(response.ok && endpoint == "/QnA"){
+                responseSection.innerHTML = `<p>Answer: ${data.response}</p>`;
+            }
+        } catch (error) {
+            responseSection.innerHTML = `<p>Error: ${error.message}</p>`;
+        }
+    }
+    summarizeBtn.addEventListener("click", () => processRequest("summarize"));
+    qnaBtn.addEventListener("click", () => processRequest("qna"));
+
+    </script>
+
+</body>
+</html>
