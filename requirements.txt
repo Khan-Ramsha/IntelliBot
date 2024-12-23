@@ -11,3 +11,4 @@ pypdf
 python-multipart
 python-dotenv
 cohere
+uvicorn
