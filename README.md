@@ -19,14 +19,14 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
    https://github.com/Khan-Ramsha/IntelliBot.git
    ```
    ``` bash
-       cd intellibot
+       cd IntelliBot
    ```
 
 3. Install the dependencies:
 
     ```bash 
     pip install -r requirements.txt
-   ```
+    ```
 
 3. Create a .env file and add your API keys (for models like Cohere, Hugging Face, etc.):
 
