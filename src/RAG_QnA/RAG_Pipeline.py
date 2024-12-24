@@ -13,18 +13,18 @@ load_dotenv()
 TOKEN = os.getenv("HUGGINGFACE")
 
 def run_rag_pipeline(file_path, query):
-    # Load document
+    # Loading PDF
     loader = DocumentLoader(file_path)
     content = loader.load_document()
 
-    # Process the document into chunks
+    #extracting content from pdf
     processor = DocumentProcessor(content)
     chunked_documents = processor.process_documents()
-
-    # Create embeddings for document chunks and set up vector store
+    
+    # Creating embeddings for document chunks
     embedding_model = HuggingFaceEmbeddings() 
-    vector_store = VectorStore(chunked_documents, embedding_model)
-    retriever = vector_store.get_retriever()
+    vector_store = VectorStore(chunked_documents, embedding_model) #stores the document embedding
+    retriever = vector_store.get_retriever() #retriever for fetching the most relevant chunk based on user query, then that chunk is passed to LLM 
 
     pipeline = HuggingFaceHub(
         repo_id="google/gemma-2-2b-it", 

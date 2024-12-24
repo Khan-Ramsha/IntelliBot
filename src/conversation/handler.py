@@ -1,7 +1,4 @@
-from langchain.chains.conversation.memory import ConversationSummaryMemory
-from langchain.chains import ConversationChain
 from src.conversation.prompts import PromptSelector
-from langchain_openai import ChatOpenAI  
 import cohere
 import os
 from dotenv import load_dotenv
@@ -29,7 +26,6 @@ class ConversationHandler:
             max_tokens=100,
             temperature=0.7
         )
-        
         generated_text = response.generations[0].text.strip()
         
         history.append({"role": "user", "content": user_input})
