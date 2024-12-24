@@ -106,8 +106,11 @@ async def qna(request: Request):
         return {"response": answer}
     except Exception as e:
         logger.error(f"Error during QnA: {str(e)}")
-        raise HTTPException(status_code=500, detail="Failed to process the document, Try Again")
     
+        if '500' in str(e):  
+            raise HTTPException(status_code=500, detail="The model is busy, please try again later.")
+        raise HTTPException(status_code=500, detail="Failed to process the document, Try Again")
+        
 @app.post("/summarize")
 async def summarize(request: Request):
     data = await request.json()
