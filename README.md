@@ -22,7 +22,7 @@ A multifunctional AI-powered smart assistant designed to offer personalized conv
        cd IntelliBot
    ```
 
-3. Install the dependencies:
+2. Install the dependencies:
 
     ```bash 
     pip install -r requirements.txt
